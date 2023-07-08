@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casual</title>
+
+    <style>
+        *,
+        ::before,
+        ::after {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        :disabled {
+            cursor: not-allowed;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header {
+            display: flex;
+            line-height: 40px;
+            background-color: cornflowerblue;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .btn {
+            background-color: coral;
+            padding: 3px 12px;
+            border-radius: 5px;
+        }
+
+        header input {
+            padding: 5px 5px 5px 24px;
+            border-radius: 5px;
+        }
+
+        header input:focus-within {
+            width: 200px;
+        }
+
+        header label::before {
+            content: '\1F50D';
+            position: relative;
+            left: 29px;
+            top: 2px;
+        }
+
+        nav {
+            background-color: rgb(207, 80, 199);
+            padding: 10px;
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav>ul {
+            display: flex;
+        }
+
+        nav ul li a {
+            color: #000;
+            padding: 8px 12px;
+            display: block;
+        }
+
+        nav ul li:hover>a {
+            background-color: rgb(212, 198, 198);
+        }
+
+        .drop {
+            position: relative;
+        }
+
+        .drop::before {
+            content: '';
+            border: 5px solid;
+            border-color: #000 transparent transparent;
+            position: absolute;
+            top: 50%;
+            left: -1px;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: none;
+            padding: 10px;
+            background-color: bisque;
+
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        .fullwidth {
+            left: 0;
+            right: 0;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .dropdown ul li:hover a {
+            background-color: rgb(214, 76, 7);
+        }
+
+        main {
+            display: flex;
+            background: #6ddbe5
+        }
+        article {
+            flex: 1 0 70%;
+        }
+
+        aside {
+            flex: 1 0 30%;
+        }
+
+        .image {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .image img {
+            width: 150px;
+            aspect-ratio: 1/1;
+            padding: 10px;
+            box-shadow: 0 0 5px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        .image img:hover {
+            width: 170px;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer {
+            background-color: blue;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .video iframe {
+            box-shadow: 0 0 5px;
+        }
+
+
+        @media screen and (max-width:1200px) {}
+
+        @media screen {}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Brand</h1>
+            <form action="#">
+                <label for="search">
+                    <input type="text" id="search">
+                </label>
+                <button class="btn">Search</button>
+            </form>
+        </header>
+        <nav>
+            <ul>
+                <li> <a href="">Home</a></li>
+                <li> <a href="">About</a></li>
+                <li> <a href="" class="drop">Course </a>
+                    <div class="dropdown fullwidth">
+                        <div class="flex">
+                            <ul>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+
+                            </ul>
+
+                            <ul>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+                                <li><a href="">web</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li> <a href="" class="drop">Blog</a></li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Main Content</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatem dolore accusamus
+                    dicta nemo dolorem, repellat vel, maxime unde quia minima veritatis optio porro perspiciatis, animi
+                    labore quos commodi. Reiciendis!</p>
+
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mdztVfEBwC8"
+                        title="YouTube video player" frameborder="10"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </article>
+
+            <aside>
+                <h2>Sidebar</h2>
+                <div class="image">
+                    <img src="../j1.jpg" alt="">
+                    <img src="../j1.jpg" alt="">
+                    <img src="../j1.jpg" alt="">
+                    <img src="../j1.jpg" alt="">
+                    <img src="../j1.jpg" alt="">
+                    <img src="../j1.jpg" alt="">
+
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>@2023</p>
+            <p>Sign up</p>
+        </footer>
+    </div>
+
+    <script>
+        "use strict";
+
+        setTimeout(function () {
+            console.log("JAI SHREE RAM");
+        }, 2000)
+    </script>
+
+
+</body>
+
+</html>
